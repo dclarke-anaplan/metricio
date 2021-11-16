@@ -1,0 +1,31 @@
+.widget-jira-tickets-status {
+  background-color: antiquewhite;
+  .ticket {
+    padding: 0.5rem;
+    display: flex;
+    .title {
+      font-size: 0.9rem;
+      width: 5rem;
+      text-align: left;
+      a {
+        text-decoration: none;
+        color: #9c4274;
+      }
+    }
+
+    .currentStatus {
+      width: 10rem;
+      font-size: 0.8rem;
+      color: darkorange;
+    }
+    .done, .closed {
+      color: green;
+    }
+
+    .not_started {
+      color: blue;
+    }
+  }
+
+}
+

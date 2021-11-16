@@ -17,7 +17,6 @@ const webConfig = {
   entry: getNamesAndPaths(paths.dashboards),
   target: 'web',
   output: { path: paths.dist, filename: '[name].dashboard.bundle.js' },
-  stats: 'errors-only',
   module: {
     rules: [
       {
@@ -33,6 +32,17 @@ const webConfig = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
         include: [paths.styles, paths.widgets],
       },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000000,
+            },
+          }
+        ]
+      }
     ],
   },
   plugins: [

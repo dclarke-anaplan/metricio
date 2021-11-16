@@ -16,3 +16,7 @@ $progressChartSize: 160px;
     left: calc(50% - #{$progressChartSize / 2});
   }
 }
+
+div[class*="Team-epic"] h1.widget__title {
+  font-size: 1.3rem;
+}

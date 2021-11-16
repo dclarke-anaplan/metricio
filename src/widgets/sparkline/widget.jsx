@@ -21,7 +21,11 @@ export default class SparklineWidget extends BaseWidget {
     const classList = classNames(...this.classList, 'widget__sparkline');
 
     return (
-      <div className={classList}>
+      <div className={classList}
+           onClick={super.onClick()}
+           onMouseOver={super.startHover()}
+           onMouseOut={super.stopHover()}
+           style={{cursor: super.getCursorStyle(), opacity: super.getOpacity()}}>
         <div className="sparkline">
           {typeof this.state.value !== 'undefined' && (
             <div>

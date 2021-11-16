@@ -2,11 +2,28 @@
   background-color: #47bbb3;
 }
 
-$colors: #2ecec5, #348aa7, #525174, #694d70;
-$repeat: 8;
+// $colors: #2ecec5, #348aa7, #525174, #694d70;
+// $repeat: 8;
 
-@for $i from 1 through $repeat {
-  .widget__number:nth-child(#{length($colors)}n + #{$i}) {
-    background: nth($colors, random(length($colors)));
-  }
+// @for $i from 1 through $repeat {
+//   .widget__number:nth-child(#{length($colors)}n + #{$i}) {
+//     background: nth($colors, random(length($colors)));
+//   }
+// }
+
+
+.widget__number_value1{
+  background-color: #4cbf55;
+}
+
+.widget__number_value2{
+  background-color: #b1b400e7;
+}
+
+.widget__number_value3{
+  background-color: rgb(190, 124, 0);
+}
+
+.widget__number_value4{
+  background-color: #f42a2a;
 }

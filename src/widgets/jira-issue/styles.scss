@@ -1,0 +1,45 @@
+.widget__number {
+  background-color: #47bbb3;
+}
+
+// $colors: #2ecec5, #348aa7, #525174, #694d70;
+// $repeat: 8;
+
+// @for $i from 1 through $repeat {
+//   .widget__number:nth-child(#{length($colors)}n + #{$i}) {
+//     background: nth($colors, random(length($colors)));
+//   }
+// }
+
+.widget__name {
+  left: 0;
+  right: 0;
+  bottom: 0.4rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.widget__age {
+  text-transform: uppercase;
+  padding: 0.65rem 0;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.widget__number_okay{
+  background-color: #4cbf55;
+}
+
+// .widget__number_warning{
+//   background-color: #b1b400e7;
+// }
+
+.widget__number_warning{
+  background-color: rgb(190, 124, 0);
+}
+
+.widget__number_error{
+  background-color: #f42a2a;
+}

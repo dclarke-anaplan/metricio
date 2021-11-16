@@ -1,0 +1,20 @@
+.build-line--success {
+    max-height: 0px !important;
+    font-size: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.build-line--failure {
+    margin-right: 10;
+    margin-left: 10;
+}
+
+.build-line--unstable {
+    margin-right: 10;
+    margin-left: 10;
+}
+
+.multi-build-status {
+    background-color: #47bbb3;
+}

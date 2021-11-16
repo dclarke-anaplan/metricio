@@ -1,3 +1,6 @@
+@import '~csshake';
+@import '~csshake/scss/csshake-hard.scss';
+
 $gutter: 0.625rem;
 
 *,
@@ -48,11 +51,28 @@ p {
   grid-column: span 2;
 }
 
+.widget--large {
+  grid-column: span 3;
+}
+
+.widget--full {
+  grid-column: span 10;
+}
+
+.widget--2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.widget--tall {
+  grid-row: span 2;
+}
+
 .widget__title {
   text-align: center;
   font-size: 1.875rem;
   font-weight: 400;
   color: #fff;
+  overflow-wrap: break-word;
 }
 
 .widget__value {
@@ -71,4 +91,79 @@ p {
   font-size: 0.8rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.dashboardTitle {
+  text-align: center;
+}
+
+.dashboardPageInd {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 1rem;
+  padding-top: 0.4rem;
+  font-size: 1.4rem;
+  z-index: 100;
+}
+
+.hermit {
+  display: inline-block;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.connectionStatusBar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1vw;
+}
+
+.connectionStatusBarDisconnected {
+  background-color: rgb(201, 25, 25);
+}
+
+.connectionStatusBarConnected {
+  background-color: rgb(39, 167, 39);
+}
+
+.connectionStatusBarFadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 7s, opacity 2s 5s linear;
+}
+
+.blinkText {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.widget-image {
+
+}
+
+.error-widget {
+  position: relative;
+  text-align: center;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #333;
 }

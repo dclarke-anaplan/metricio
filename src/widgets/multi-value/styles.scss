@@ -1,0 +1,33 @@
+.widget__multivalue_value {
+  color: rgb(255, 255, 255);
+}
+
+/* ---------- Team ---------- */
+
+.widget__Team-JiraGoal {
+  position: relative;
+  text-align: center;
+  padding: 1.25rem;
+  color: #333;
+  background-color: #0c5bb0;
+
+  .widget__value {
+    text-transform: none;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .widget__title {
+    text-transform: uppercase;
+    padding: 0.05rem 0;
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.widget__Team-Dates {
+  background-color: #cc6600;
+}

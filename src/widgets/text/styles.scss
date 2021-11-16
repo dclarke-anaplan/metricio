@@ -1,1 +1,68 @@
-// empty so far...
+
+/* --------- Team1 --------- */
+
+.widget__Team1-JiraSprintGoal,.widget__Behemoth-JiraSprintGoal {
+  position: relative;
+  text-align: center;
+  padding: 1.25rem;
+  color: #333;
+  background-color: #222;
+
+  .widget__value {
+    text-transform: none;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .widget__title {
+    text-transform: uppercase;
+    padding: 0.05rem 0;
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+
+/* -------- Team2 ------- */
+
+.widget__Team2-OldestPR {
+  .widget__value {
+    text-transform: none;
+    text-align: center;
+    font-size: 1.3725rem;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
+/* -------- Team3 -------- */
+
+.widget__Team3-qod {
+  position: relative;
+  text-align: center;
+  padding: 1.25rem;
+
+  .widget__value {
+    text-transform: none;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 200;
+    color: #fff;
+    font-style: italic;
+    padding: 1.75em;
+  }
+
+}
+
+/* --------- Team4 ---------- */
+
+
+.widget__Team4-exoplanet-count {
+  .widget__value {
+    text-transform: none;
+    font-size: 3.0rem;
+  }
+}

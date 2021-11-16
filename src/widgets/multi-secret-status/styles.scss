@@ -1,0 +1,90 @@
+.multi-secret-status {
+  position: relative;
+  text-align: center;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.multi-secret-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.empty-list {
+  background-color: #4a4a4a;
+
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.empty-list-placeholder {
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgb(187, 187, 187);
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.multi-secret-title {
+  text-align: center;
+  color: #fff;
+
+  margin-bottom: -2px;
+  margin-top: -1px;
+}
+
+.updated-at {
+  left: 0;
+  right: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -1px;
+  margin-bottom: -2px;
+}
+
+.secret-line {
+  border-radius: 8px;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.secret-line--default {
+  background-color: #12b0c5;
+}
+
+.secret-line--success {
+  background-color: #4cbf55;
+}
+
+.secret-line--failure {
+  background-color: #f42a2a;
+}
+
+.secret-line--warning {
+  background-color: #d56e00;
+}
+
+.secret-line--unknown-age {
+  background-color: #6f5b47;
+}
+
+.widget--unknown-age {
+  background-color: #6f5b47;
+}
+

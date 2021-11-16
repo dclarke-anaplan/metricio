@@ -5,9 +5,9 @@ import session from 'express-session';
 import connectRedis from 'connect-redis';
 import socketIo from 'socket.io';
 
-import webpackMiddleWare from './webpack.middleware';
 import appMeta from './package.json';
 import config from './config';
+import {lookupAllSecrets} from './secrets';
 import logger from './lib/logger';
 import * as storage from './lib/storage';
 import startJobs from './lib/jobs';
@@ -16,7 +16,7 @@ const env = process.env.NODE_ENV || 'development';
 const RedisStore = connectRedis(session);
 const app = express();
 const server = createServer(app);
-const io = socketIo(server, {});
+const io = socketIo(server, { serveClient: false });
 
 const sessionMiddleware = session({
   store: new RedisStore({ client: storage.client }),
@@ -61,10 +61,22 @@ app.get('/:dashboard', (req, res) => {
 if (process.env.NODE_ENV === 'production') {
   app.use('/dist', express.static('dist'));
 } else {
+  const webpackMiddleWare = require('./webpack.middleware').default;
   app.use(webpackMiddleWare());
+  app.use("/images", express.static("src/assets"));
 }
 
-server.listen(app.get('port'), () => {
-  logger('info', `running on port: ${app.get('port')}`);
-  startJobs(io);
+lookupAllSecrets().then(() => {
+  server.listen(app.get('port'), () => {
+    logger('info', `running on port: ${app.get('port')}`);
+    startJobs(io);
+  });
+}).catch((error) => {
+  console.error(error);
+  throw error;
+});
+
+process.on('SIGINT', () => {
+  console.log("Received SIGINT signal - terminating process");
+  process.exit(1);
 });

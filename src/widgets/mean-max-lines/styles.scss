@@ -1,0 +1,83 @@
+.widget__background {
+  background-color: rgb(119, 80, 159);
+}
+
+
+.widget__main_grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.device_widget__body_values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 250px;
+}
+
+.widget__body_right_col {
+  grid-column-start: 2;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.right_col_header {
+  font-size: 1.5rem;
+}
+
+.right_col_body {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  div {
+    flex: 0 50%;
+  }
+}
+
+.location_widget__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.location_widget_body_header {
+  font-size: 1.25rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.6rem;
+  z-index: 2;
+}
+
+.location_widget_body_values {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  padding-bottom: 0.8rem;
+  z-index: 2;
+
+  > div {
+    min-width: 50%;
+  }
+}
+
+.location_widget_background_image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+  z-index: 0;
+}

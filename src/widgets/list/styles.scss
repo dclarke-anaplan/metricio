@@ -1,0 +1,21 @@
+.centered {
+  display: block;
+  grid-column: span 6;
+}
+
+.MuiListItemText-primary {
+  font-size: 25px;
+}
+
+.row {
+  display: flex;
+}
+
+.row > * {
+  color: #000;
+  font-size: 10px;
+}
+
+.column {
+  flex: 50%;
+}

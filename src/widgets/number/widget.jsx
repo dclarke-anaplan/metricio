@@ -12,14 +12,35 @@ export default class NumberWidget extends BaseWidget {
     this.state = {
       value: undefined,
       updatedAt: undefined,
+      link: undefined
     };
   }
 
+
+  getClassColourName(value) {
+
+    if (value >= 10) {
+      return "widget__number_value4";
+    }
+
+    if (value >= 7) {
+      return "widget__number_value3";
+    }
+
+    if (value >= 3) {
+      return "widget__number_value2";
+    }
+
+    return "widget__number_value1"
+
+  }
+
   render() {
-    const classList = classNames(...this.classList, 'widget__number');
     const value = this.props.format
       ? numeral(this.state.value).format(this.props.format)
       : this.state.value;
+
+    const classList = classNames(...this.classList, 'widget__number', this.getClassColourName(value));
 
     return (
       <div className={classList}>

@@ -1,0 +1,97 @@
+.multi-build-status {
+  position: relative;
+  text-align: center;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.multi-build-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.empty-list {
+  background-color: #4a4a4a;
+
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.empty-list-placeholder {
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgb(187, 187, 187);
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.multi-build-title {
+  text-align: center;
+  color: #fff;
+
+  margin-bottom: -2px;
+  margin-top: -1px;
+}
+
+.updated-at {
+  left: 0;
+  right: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -1px;
+  margin-bottom: -2px;
+}
+
+.build-line {
+  border-radius: 8px;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.build-line--default {
+  background-color: #12b0c5;
+}
+
+.build-line--pending {
+  background-color: #12b0c5;
+}
+
+.build-line--success {
+  background-color: #4cbf55;
+}
+
+.build-line--failure {
+  background-color: #f42a2a;
+}
+
+.build-line--error {
+  background-color: #d22af4;
+}
+
+.build-line--aborted {
+  background-color: #f08f8f;
+}
+
+.build-line--unstable {
+  background-color: #d56e00;
+}
+
+.build-line--not_built {
+  background-color: #797979;
+}

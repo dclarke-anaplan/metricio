@@ -1,24 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 import '../styles/default.scss';
 
 import Dashboard from '../widgets/dashboard';
-import NumberWidget from '../widgets/number/widget';
-import PingWidget from '../widgets/ping/widget';
-import BuildStatusWidget from '../widgets/build-status/widget';
-import SparklineWidget from '../widgets/sparkline/widget';
-import ProgressWidget from '../widgets/progress/widget';
+import ClockWidget from '../widgets/clock/widget';
+import TextWidget from '../widgets/text/widget';
+
+class StaticTextWidget extends React.Component {
+
+  render() {
+    return (
+      <div className="widget widget--large">
+        <h1 className="widget__title" style={{ fontSize: "2.5rem"}}>{this.props.title}</h1>
+        <p style={{ textAlign: "center",fontSize: "1.75rem", fontWeight: 200, color: "#fff"}}>{this.props.text}</p>
+      </div>
+    );
+  }
+}
+
+StaticTextWidget.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 ReactDOM.render(
   <Dashboard>
-    <SparklineWidget name="DemoUsers" title="Users" format="0.00a" />
-    <PingWidget name="GooglePing" title="API" />
-    <NumberWidget name="ReasonPRs" title="Pull Requests" />
-    <BuildStatusWidget name="DemoMaster" title="Build - Master" size="medium" />
-    <ProgressWidget name="DemoProgress" title="Sales Target" />
-    <NumberWidget name="DemoConversion" title="Conversion" metric="%" format="0.0a" />
-    <BuildStatusWidget name="DemoDevelop" title="Build - Develop" size="medium" />
+      <StaticTextWidget title="Index Dashboard" size="medium" text="Try and make a dashboard?" />
+      <ClockWidget name="Clock" title="London" timezone="Europe/London"/>
   </Dashboard>,
   document.getElementById('content'),
 );

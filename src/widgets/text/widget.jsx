@@ -14,10 +14,13 @@ export default class TextWidget extends BaseWidget {
   render() {
     const classList = classNames(...this.classList, 'widget__text');
 
+    const style = this.props.backgroundColor ? { backgroundColor: this.props.backgroundColor } : {};
+
     return (
-      <div className={classList}>
+      <div className={classList} style={style}>
         <h1 className="widget__title">{this.props.title}</h1>
         <h2 className="widget__value">{this.state.value}</h2>
+        {this.props.showUpdatedAt && this.state.updatedAt && <p className="widget__updatedAt">{this.state.updatedAt}</p>}
       </div>
     );
   }
@@ -25,4 +28,6 @@ export default class TextWidget extends BaseWidget {
 
 TextWidget.propTypes = {
   title: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
+  showUpdatedAt: PropTypes.bool
 };

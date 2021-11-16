@@ -6,7 +6,7 @@ import logger from '../../lib/logger';
 export default class BaseWidget extends React.Component {
   constructor(props) {
     super(props);
-    this.classList = ['widget', `widget__${this.props.name}`];
+    this.classList = ['widget-image', 'widget', `widget__${this.props.name}`];
     if (this.props.size) this.classList.push(`widget--${this.props.size}`);
   }
 
@@ -16,6 +16,29 @@ export default class BaseWidget extends React.Component {
       this.setState(data);
     });
   }
+
+  onClick() {
+    return () => {
+      if (this.state.link) window.open(this.state.link)
+    };
+  }
+
+  getCursorStyle() {
+    return this.state.link ? "pointer" : "auto";
+  }
+
+  getOpacity() {
+    return this.state.isHovering && this.state.link ? 0.6 : 1;
+  }
+
+  startHover() {
+    return () => this.setState({isHovering: true});
+  }
+
+  stopHover(){
+    return () => this.setState({isHovering: false});
+  }
+
 }
 
 BaseWidget.defaultProps = {
